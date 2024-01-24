@@ -15,7 +15,7 @@ public class Main {
     public static void main(String[] args) {
         try {
             // Путь к вашему .docx файлу
-            String filePath = "C:\\Users\\dan_v\\Downloads\\Obrazets__kopia.docx";
+            String filePath = "C:\\Users\\Fripo\\Desktop\\JAVA\\Lesozavodsk\\Obraz.docx";
 
             // Создаем объект FileInputStream для чтения файла
             FileInputStream fis = new FileInputStream(filePath);
@@ -24,12 +24,29 @@ public class Main {
             XWPFDocument document = new XWPFDocument(fis);
 
             // Заменяем текст
-            replaceText(document, "000", "123");
-            replaceText(document, "Игнатюк", "Шматюк");
-            replaceText(document, "августа", "хуявгуста");
+            replaceText(document, "000", "123");                                                             // номер договораа
+            replaceText(document, "11", "14");                                                               // число
+            replaceText(document, "августа", "декабря");                                                      // месяц
+            replaceText(document, "Игнатюк", "Ткачук");                                                   // Ф
+            replaceText(document, "Виктор", "Алексей");                                                       // И
+            replaceText(document, "Георгиевич", "Васильевич");                                             // О
+            replaceText(document, "Суперпупер", "действующий");                                              // действующая | действующий
+            replaceText(document, "Диджей", "05 03");                                                        // серия паспорта
+            replaceText(document, "437576", "952371");                                                       // номер паспорта
+            replaceText(document, "Кириллица", "Лесозаводским ГОВД Приморского края от 23.07.2004г");
+            // 1 вариант - Лесозаводским ГОВД Приморского края от 04.07.2001г
+            // 2 вариант - Отделением УФМС Росси по Приморскому краю в Лесозаводском городском округе от 05.05.2016г
+            // 3 вариант - УМВД России по Приморскому краю от 02.08.2019г
+            replaceText(document, "021В139335577", "021В267708178");                                          // счетчик
+            replaceText(document, "Дуперсупер", "именуемый");                                                 //именуемая | именуемый
+            replaceText(document, "Чкалова", "Карьерная");                                                       // Улица
+            replaceText(document, "47", "2");                                                               // Номер дома
+
+
+
 
             // Сохраняем изменения
-            FileOutputStream fos = new FileOutputStream(new File("C:\\Users\\dan_v\\Downloads\\ready.docx"));
+            FileOutputStream fos = new FileOutputStream(new File("C:\\Users\\Fripo\\Desktop\\JAVA\\Lesozavodsk\\Gotovoe\\Ткачук.docx"));
             document.write(fos);
 
             // Закрываем потоки
